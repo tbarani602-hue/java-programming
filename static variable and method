@@ -1,0 +1,13 @@
+public class Main {
+    static int sno=10;
+    static String sname="mahesh";
+        static void display() {
+        System.out.println(sno+" "+sname);
+    }
+    public static void main(String[] args) {
+        Main.display();
+        Main.sno=20;
+        Main.sname="barani";
+         System.out.println(Main.sno+" "+Main.sname);
+    }
+}
