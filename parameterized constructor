@@ -1,0 +1,16 @@
+public class Main {
+    int sno;
+    String sname;
+    Main(int sno,String sname) {
+        this.sno=sno;
+        this.sname=sname;
+        System.out.println("parameterized constructor");
+    }
+        void display() {
+        System.out.println(sno+" "+sname);
+    }
+    public static void main(String[] args) {
+        Main ob=new Main(10,"barani");
+        ob.display();
+    }
+}
