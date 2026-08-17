@@ -1,0 +1,16 @@
+public class Main {
+    int sno;
+    String sname;
+    Main() {
+        sno=19;
+        sname="Baranitharan";
+        System.out.println("default Contructor");
+    }
+        void display() {
+        System.out.println(sno+" "+sname);
+    }
+    public static void main(String[] args) {
+        Main ob=new Main();
+        ob.display();
+    }
+}
