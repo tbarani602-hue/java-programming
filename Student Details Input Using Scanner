@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter any student no");
+        int sno=sc.nextInt();
+        System.out.println("enter any student name");
+        String name=sc.next();
+        System.out.println("enetr any student fee");
+        double fee=sc.nextDouble();
+        System.out.println(sno+" "+name+" "+fee);
+    }
+}
+ 
