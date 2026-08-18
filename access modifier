@@ -1,0 +1,14 @@
+package com;
+public class Hello{
+    private byte b=5;
+    short s=222;
+    protected int i=222111;
+    public long l=99999999999L;
+    public static void  main(String[]args){
+        Hello ob=new  Hello();
+        System.out.println("private...."+ob.b);
+        System.out.println("...."+ob.s);
+        System.out.println("protected"+ob.i);
+        System.out.println("public..."+ob.l);
+    }
+}
