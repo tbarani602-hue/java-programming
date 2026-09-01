@@ -1,0 +1,11 @@
+import java.io.FileWriter;
+import java.io.IOException;
+public class FileWriterDemo{
+    public static void main(String[] args)throws IOException{
+        FileWriter fw=new FileWriter("ab.txt");
+        fw.write("hello java");
+        fw.write("\n java is platform independent");
+        fw.close();
+        System.out.println("success");
+    }
+}
