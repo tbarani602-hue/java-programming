@@ -1,0 +1,23 @@
+import java.io.*;
+class Student<T extends Number>{
+    private T marks;
+    Student(T marks){ this.marks=marks;}
+    void display(){System.out.println("Marks:"+marks);}
+}
+public class Main{
+    public static void main(String[]args) throws IOException{
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        String name=br.readLine();
+        double marks=Double.parseDouble(br.readLine());
+        
+        StringBuffer result=new StringBuffer("student:");
+        result.append(name).append(",Marks:").append(marks);
+        
+        Student<Double> student=new Student<>(marks);
+        student.display();
+        
+        try(BufferedWriter bw= new BufferedWriter(new FileWriter("Student.txt"))){
+            bw.write(result.toString());
+        }
+    }
+}
