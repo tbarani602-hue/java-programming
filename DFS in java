@@ -1,0 +1,59 @@
+import java.util.*;
+
+public class DFS {
+    
+    private static void dfsHelper(int curr, ArrayList<ArrayList<Integer>> graph, boolean[] visited) {
+       
+        visited[curr] = true;
+        System.out.print(curr + " ");
+
+       
+        for (int neighbor : graph.get(curr)) {
+            if (!visited[neighbor]) {
+                dfsHelper(neighbor, graph, visited);
+            }
+        }
+    }
+
+   
+    public static void dfsTraversal(int startNode, ArrayList<ArrayList<Integer>> graph, int n) {
+        boolean[] visited = new boolean[n];
+        System.out.print("DFS Traversal: ");
+        
+       
+        dfsHelper(startNode, graph, visited);
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of nodes: ");
+        int n = sc.nextInt();
+
+        System.out.print("Enter number of edges: ");
+        int m = sc.nextInt();
+
+        
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        System.out.println("Enter the edges (u v) for 0-indexed nodes:");
+        for (int i = 0; i < m; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+           
+            graph.get(u).add(v);
+            graph.get(v).add(u);
+        }
+
+       
+        if (n > 0) {
+            dfsTraversal(0, graph, n);
+        }
+
+        sc.close();
+    }
+}
