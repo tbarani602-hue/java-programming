@@ -1,0 +1,62 @@
+import java.util.*;
+
+public class BFS {
+    
+    public static void bfsTraversal(int startNode, ArrayList<ArrayList<Integer>> graph, int n) {
+        boolean[] visited = new boolean[n];
+        Queue<Integer> queue = new LinkedList<>();
+
+       
+        visited[startNode] = true;
+        queue.add(startNode);
+
+        System.out.print("BFS Traversal: ");
+        while (!queue.isEmpty()) {
+            int curr = queue.poll();
+            System.out.print(curr + " ");
+
+           
+            for (int neighbor : graph.get(curr)) {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.add(neighbor);
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of nodes: ");
+        int n = sc.nextInt();
+        System.out.print("Enter number of edges: ");
+        int m = sc.nextInt();
+
+        
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        System.out.println("Enter the edges (u v) for 0-indexed nodes:");
+        for (int i = 0; i < m; i++) {
+            int u = sc.nextInt();
+            
+            int v = sc.nextInt();
+            
+          
+            graph.get(u).add(v);
+            graph.get(v).add(u); 
+        }
+
+       
+        if (n > 0) {
+            bfsTraversal(0, graph, n);
+        }
+        
+        sc.close();
+    }
+}
